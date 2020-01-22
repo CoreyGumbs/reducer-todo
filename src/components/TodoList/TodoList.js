@@ -8,7 +8,6 @@ const TodoList = ({list, dispatch}) => {
         dispatch({type: 'CLEAR_COMPLETED_TODO', payload: false})
     }
     
-    console.log(list);
     return(
         <div>
             {list.data.map( todo => (
@@ -16,9 +15,12 @@ const TodoList = ({list, dispatch}) => {
                     <TodoItem todo={todo} dispatch={dispatch}/>
                 </div>
             ))}
-            <button onClick={clearCompletedTodos}>
+            {list.data.length > 0 && 
+                <button onClick={clearCompletedTodos}>
                     Clear Completed
-            </button>
+                </button>
+            }
+            
         </div>
         );
 }

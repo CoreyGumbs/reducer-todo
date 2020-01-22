@@ -27,7 +27,6 @@ const TodoForm  = ({state, dispatch}) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-
         dispatch(
             {type: 'ADD_TODO', 
                     payload: {
@@ -37,6 +36,9 @@ const TodoForm  = ({state, dispatch}) => {
                     }
             }
         );
+        setTodoItem('');
+        setTodoTags('');
+        setDueDate(new Date());
     };
 
     return(
