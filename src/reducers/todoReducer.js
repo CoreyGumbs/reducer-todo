@@ -2,14 +2,24 @@ let id = 1;
 
 export const initialState ={ 
     // data: []
-    data: [{
-            item: 'first todo',
-            tags: ['music', 'work', 'play'],
-            completed: false,
-            completedDate: 'not completed',
-            dueDate: new Date('2020/01/10'),
-            id: id++
-    }]
+    data: [
+            {
+                item: 'first todo',
+                tags: ['music', 'work', 'play'],
+                completed: false,
+                completedDate: 'not completed',
+                dueDate: new Date('2020/01/10'),
+                id: id++
+            },
+            {
+                item: 'second todo',
+                tags: ['music', 'work', 'play'],
+                completed: false,
+                completedDate: 'not completed',
+                dueDate: new Date('2020/03/31'),
+                id: id++
+            }
+        ]
 };
 
 export const todoReducer = (currentState, action) => {

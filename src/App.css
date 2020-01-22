@@ -21,7 +21,7 @@
   padding: 0;
   font-family: 'Bowlby One SC', cursive;
   font-size: 5rem;
-  /* text-shadow: 0px 8px 5px rgba(118, 93, 105, 1); */
+  text-shadow: 0px 3px 4px rgba(30, 139, 195, 1);
   color: rgba(210, 82, 127, 1); /*caberet*/
   
 
@@ -57,8 +57,9 @@
 }
 
 .clear-btn:hover{
-  background-color: white;
-  color: rgba(210, 82, 127, 1);
+  background-color: rgba(30, 139, 195, 1);
+  border: 1px solid rgba(30, 139, 195, 1);
+  color: white;
 }
 
 .todo-form-container{
@@ -130,7 +131,7 @@
   margin: 20px auto 50px auto;
   padding: 20px;
   border:1px solid #ccc;
-  box-shadow: 0px 2px 5px #ccc;
+  box-shadow: 0px 5px 5px #ccc;
   transition: all .2s ease-in-out;
 }
 
@@ -144,10 +145,12 @@
   color:  rgba(210, 82, 127, 1);
   font-family: 'Bowlby One SC', cursive;
   font-size: 3rem; 
+  
 }
 
 .todo-item-heading-youdo-completed{
  color: #999;
+ transition: all .2s ease-in-out;
 }
 
 .todo-item-heading, .todo-item-heading-completed{
@@ -157,11 +160,17 @@
   font-size: 4rem;
   color:  rgba(210, 82, 127, 1);
   border-bottom: 1px solid rgba(210, 82, 127, 1);
+  transition: all .2s ease-in-out;
 }
 
 .todo-item-heading-completed{
   color: #999;
   border-bottom: 1px solid #999;
+  text-shadow: 0px 2px 1px #666;
+}
+
+.todo-item-heading-completed, .todo-item-heading-youdo-completed{
+  text-shadow: 0px 3px 2px #666;
 }
 
 .todo-tags-container{
