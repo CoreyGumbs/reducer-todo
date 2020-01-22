@@ -17,13 +17,20 @@ const TodoItem = ({uniqueID, todo, dispatch}) => {
 
     }, []);
 
+    console.log(todo.completed);
+
     return(
-        <div className="todo-item-container" onClick={() => dispatch({type: 'TOGGLE_COMPLETED', payload: {id: todo.id}})}>
-            <h2 className="todo-item-heading"><span className="todo-item-heading-youdo">YouDo: </span>{todo.item}</h2>
+
+        <div className={todo.completed ? "todo-item-container-completed" : "todo-item-container"} onClick={() => dispatch({type: 'TOGGLE_COMPLETED', payload: {id: todo.id}})}>
+
+        <h2 className={todo.completed ? "todo-item-heading-completed": "todo-item-heading"}>
+                <span className= {todo.completed ? "todo-item-heading-youdo-completed": "todo-item-heading-youdo"}>YouDo: </span>
+                {todo.item}
+            </h2>
 
             {todo.tags.length > 0 &&
-            <div className={todo.completed ? " todo-tags-completed" : "todo-tags-container" }>
-               {todo.tags.map((tag, idx) => <TodoItemTags tag={tag} key={idx}/>)}
+            <div className="todo-tags-container">
+               {todo.tags.map((tag, idx) => <TodoItemTags todo={todo} tag={tag} key={idx}/>)}
             </div>
             }
             

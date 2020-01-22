@@ -1,10 +1,10 @@
 import React from 'react';
 
-const TodoItemTags = ({tag}) => {
+const TodoItemTags = ({todo,tag}) => {
     return (
         <>
 
-            <button className='todo-item-tags-btn'>
+            <button className={todo.completed ? 'todo-tags-btn-completed': 'todo-item-tags-btn'} >
                 #{tag}
             </button>
         </>

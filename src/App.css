@@ -53,7 +53,7 @@
   background-color: rgba(210, 82, 127, 1);
   border: 1px solid rgba(210, 82, 127, 1);
   color: white;
-  transition: all .1s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .clear-btn:hover{
@@ -95,7 +95,7 @@
   padding: 5px 10px;
   border-color:  rgba(210, 82, 127, 1);
   font-size: 1.5rem;
-  transition: all .2s ease-in-out;
+  transition: all .4s linear;
 }
 .todo-form-input:focus{
   outline: none;
@@ -125,27 +125,43 @@
   padding: 0;
 }
 
-.todo-item-container{
+.todo-item-container,.todo-item-container-completed{
   width: 80%;
   margin: 20px auto 50px auto;
   padding: 20px;
   border:1px solid #ccc;
-  box-shadow: 0px 2px 5px #333;
+  box-shadow: 0px 2px 5px #ccc;
+  transition: all .2s ease-in-out;
 }
 
-.todo-item-heading-youdo{
+.todo-item-container-completed{
+  background-color: #e5e5e5;
+  box-shadow: 0px 0px 0px;
+  transition: all .2s ease-in-out;
+}
+
+.todo-item-heading-youdo, .todo-item-heading-youdo-completed{
   color:  rgba(210, 82, 127, 1);
   font-family: 'Bowlby One SC', cursive;
   font-size: 3rem; 
 }
 
-.todo-item-heading{
+.todo-item-heading-youdo-completed{
+ color: #999;
+}
+
+.todo-item-heading, .todo-item-heading-completed{
   width: 100%;
   margin: 0 0 10px 0;
   padding: 0 0 10px 0;  
   font-size: 4rem;
   color:  rgba(210, 82, 127, 1);
   border-bottom: 1px solid rgba(210, 82, 127, 1);
+}
+
+.todo-item-heading-completed{
+  color: #999;
+  border-bottom: 1px solid #999;
 }
 
 .todo-tags-container{
@@ -162,17 +178,29 @@
   padding: 5px 20px;
   font-size: 1.1rem;
   font-weight: bold;
-  color: white;
-  background-color: rgba(30, 139, 195, 1);
-  border: 1px solid rgba(30, 139, 195, 1);
+  color: rgba(210, 82, 127, 1);
+  background-color: white;
+  border: 1px solid rgba(210, 82, 127, 1);
   border-radius: 5px;
   transition: all .2s ease-in-out;
 }
 
 .todo-item-tags-btn:hover{
-  background-color: white;
+  background-color: rgba(210, 82, 127, 1);
   border: 1px solid rgba(210, 82, 127, 1);
-  color: rgba(210, 82, 127, 1); 
+  color: white;
+}
+
+.todo-tags-btn-completed{
+  margin: 0 10px 0 0;
+  padding: 5px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #ddd;
+  color: #999;
+  border: 1px solid#ccc;
+  border-radius: 5px;
+  transition: all .2s ease-in-out;
 }
 
 .todo-item-status{
@@ -185,7 +213,7 @@
 }
 
 .todo-item-status-heading, .todo-item-date, 
-.todo-item-overdue, .todo-item-ontime {
+.todo-item-overdue, .todo-item-ontime{
   font-size: 1.5rem;
 }
 .todo-item-status-heading{
@@ -200,7 +228,8 @@
 .todo-item-overdue{
   margin: 0;
   padding: 0;
-  color: red;
+  font-size: 1.5rem;
+  color: rgba(242, 38, 19, 1);
   font-weight: bold;
 }
 .todo-item-ontime{
@@ -209,3 +238,5 @@
   color: rgba(4, 147, 114, 1);
   font-weight: bold;
 }
+
+
