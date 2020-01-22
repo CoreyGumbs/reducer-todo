@@ -19,14 +19,22 @@ const TodoForm  = ({state, dispatch}) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch({type: 'ADD_TODO', payload: {item: todoItem, tags: todoTags}});
+
+        dispatch(
+            {type: 'ADD_TODO', 
+                    payload: {
+                        item: todoItem, 
+                        tags: todoTags.length !== 0 ? todoTags : ['No Tags Entered.']
+                    }
+            }
+        );
     };
 
     return(
         <div>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="todoItem">Add Todo:</label>
-                <input type="text" name="todoItem" value={todoItem} onChange={handleChanges} />
+                <input type="text" name="todoItem" value={todoItem} onChange={handleChanges} required />
                 <label htmlFor="">Add Tags:</label>
                 <input type="text" name="todoTags" value={todoTags} onChange={handleChanges}/>
                 <button type="submit">

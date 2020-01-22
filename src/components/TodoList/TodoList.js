@@ -11,6 +11,9 @@ const TodoList = ({list, dispatch}) => {
                     <TodoItem todo={todo} dispatch={dispatch}/>
                 </div>
             ))}
+            <button onClick={() => dispatch({type: 'CLEAR_COMPLETED_TODO', payload: false})}>
+                    Clear Completed
+            </button>
         </div>
         );
 }

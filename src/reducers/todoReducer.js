@@ -3,8 +3,9 @@ let id = 1;
 export const initialState ={ 
     data: [{
             item: 'first todo',
-            tags: [],
+            tags: ['music', 'work', 'play'],
             completed: false,
+            completedDate: 'not completed',
              id: id++
     }]
 };
@@ -20,11 +21,30 @@ export const todoReducer = (currentState, action) => {
                     item: action.payload.item,
                     tags: action.payload.tags,
                     completed: false,
-                    id: id++,
-                    completedDate: ''
+                    completedDate: 'not completed',
+                    id: id++
                     }
                 ]
             }
+        case 'TOGGLE_COMPLETED':
+            return {
+                data: [
+                    ...currentState.data.map( todo => {
+                        if(todo.id === action.payload.id){
+                            todo.completed = !todo.completed
+                            todo.completedDate = Date.now()
+                        }
+                        return todo;
+                    })
+                ]     
+            }
+        case 'CLEAR_COMPLETED_TODO':
+            return {
+                data: [
+                    ...currentState.data.filter( todo => todo.completed === action.payload)
+                ]
+            }
+
         default:
             return currentState;
     }
