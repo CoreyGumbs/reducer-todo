@@ -3,6 +3,11 @@ import React from 'react';
 import TodoItem from '../TodoItem/TodoItem';
 
 const TodoList = ({list, dispatch}) => {
+
+    const clearCompletedTodos = () => {
+        dispatch({type: 'CLEAR_COMPLETED_TODO', payload: false})
+    }
+    
     console.log(list);
     return(
         <div>
@@ -11,7 +16,7 @@ const TodoList = ({list, dispatch}) => {
                     <TodoItem todo={todo} dispatch={dispatch}/>
                 </div>
             ))}
-            <button onClick={() => dispatch({type: 'CLEAR_COMPLETED_TODO', payload: false})}>
+            <button onClick={clearCompletedTodos}>
                     Clear Completed
             </button>
         </div>

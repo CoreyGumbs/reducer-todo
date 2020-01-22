@@ -6,7 +6,8 @@ export const initialState ={
             tags: ['music', 'work', 'play'],
             completed: false,
             completedDate: 'not completed',
-             id: id++
+            dueDate: new Date('2020/01/10'),
+            id: id++
     }]
 };
 
@@ -22,6 +23,7 @@ export const todoReducer = (currentState, action) => {
                     tags: action.payload.tags,
                     completed: false,
                     completedDate: 'not completed',
+                    dueDate: action.payload.dueDate,
                     id: id++
                     }
                 ]
