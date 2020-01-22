@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const TodoForm  = () => {
+const TodoForm  = ({state, dispatch}) => {
     const [todoItem, setTodoItem] = useState('');
 
     const handleChanges = e => {
@@ -9,7 +9,7 @@ const TodoForm  = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(todoItem);
+        dispatch({type: 'ADD_TODO', payload: todoItem})
     };
 
     return(

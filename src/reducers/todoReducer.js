@@ -1,9 +1,26 @@
-export const initialState = [{
-    item: '',
-    completed: false,
-    id: Date.now()
-}];
+export const initialState ={ 
+    data: [{
+            item: 'first todo',
+            completed: false,
+             id: Date.now()
+    }]
+};
 
 export const todoReducer = (currentState, action) => {
-    return currentState;
+
+    switch(action.type){
+        case 'ADD_TODO':
+            return {
+                data: [
+                    ...currentState.data,
+                    {
+                    item: action.payload,
+                    completed: false,
+                    id: Date.now()
+                    }
+                ]
+            }
+        default:
+            return currentState;
+    }
 }

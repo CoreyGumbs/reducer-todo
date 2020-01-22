@@ -7,15 +7,15 @@ import TodoForm from '../TodoForm/TodoForm';
 
 const Todo = () => {
     const [state, dispatch] = useReducer(todoReducer, initialState);
-    console.log(state, dispatch);
-   
+    
+    console.log(state);
     return(
         <div className="todo-container">
             <div className="todo-form-container">
-                <TodoForm />
+                <TodoForm state={state} dispatch={dispatch} />
             </div>
             <div className="todo-list-container">
-                <TodoList />
+                <TodoList list={state} dispatch={dispatch} />
             </div>
         </div>
     )
