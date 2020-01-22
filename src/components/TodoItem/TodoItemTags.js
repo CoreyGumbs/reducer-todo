@@ -1,11 +1,10 @@
 import React from 'react';
 
-
 const TodoItemTags = ({tag}) => {
     return (
         <>
 
-            <button>
+            <button className='todo-item-tags-btn'>
                 #{tag}
             </button>
         </>

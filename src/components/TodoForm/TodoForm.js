@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import DatePicker from 'react-date-picker'
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+
 
 const TodoForm  = ({state, dispatch}) => {
     const [todoItem, setTodoItem] = useState('');
@@ -20,9 +22,8 @@ const TodoForm  = ({state, dispatch}) => {
         }
     };
 
-    const handleDateChange = e => {
-        console.log(e)
-        setDueDate(e);
+    const handleDateChange = date => {
+        setDueDate(date);
     }
 
     const handleSubmit = e => {
@@ -41,20 +42,19 @@ const TodoForm  = ({state, dispatch}) => {
         setDueDate(new Date());
     };
 
+    console.log(dueDate);
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="todoItem">Add Todo:</label>
-                <input type="text" name="todoItem" value={todoItem} onChange={handleChanges} required />
-                <label htmlFor="">Add Tags:</label>
-                <input type="text" name="todoTags" value={todoTags} onChange={handleChanges}/>
-                <label htmlFor="">Due Date:</label>
-                <DatePicker value={dueDate} onChange={handleDateChange} format={"MMM-dd-y"}/>
-                <button type="submit">
-                    Submit
-                </button>
-            </form>
-        </div>
+        <form onSubmit={handleSubmit}>
+            <label className="todo-form-label" htmlFor="todoItem">Add Todo:</label>
+            <input className="todo-form-input" type="text" name="todoItem" value={todoItem} onChange={handleChanges} required />
+            <label className="todo-form-label" htmlFor="">Add Tags:</label>
+            <input className="todo-form-input" type="text" name="todoTags" value={todoTags} onChange={handleChanges}/>
+            <label className="todo-form-label" htmlFor="">Due Date:</label>
+            <DatePicker className="todo-form-input" selected={dueDate} onChange={handleDateChange}/>
+            <button className="todo-form-btn" type="submit">
+                Submit
+            </button>
+        </form>  
     );
 }
 

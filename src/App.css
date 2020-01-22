@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Roboto&display=swap');
+
+*{
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.logo-header-container{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 15%; 
+  margin: 50px; 
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo-heading{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 5rem;
+  /* text-shadow: 0px 8px 5px rgba(118, 93, 105, 1); */
+  color: rgba(210, 82, 127, 1); /*caberet*/
+  
+
+  -ms-transform: rotate(-20deg); /* IE 9 */
+  -webkit-transform: rotate(-20deg); /* Safari prior 9.0 */
+  transform: rotate(-20deg);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo-container{
+  position: relative;
+  left: 300px;
+  width: 65%;
+  margin: 50px 0; 
+  padding: 0;
+  /* border: 1px solid purple; */
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.todo-form-container{
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.todo-form-container form{
+  width: 100%;
+  /* background-color: rgba(210, 82, 127, 1); */
+  padding: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.todo-form-label{
+  margin: 0 10px;
+  font-size: 1.5rem;
+  color: rgba(46, 49, 49, 1);
+}
+
+.todo-form-input, .todo-form-input:focus{
+  border-width: 1px;
+  border-top: 0;
+  border-left: 0;
+  border-right:0;
+  border-style: solid;
+}
+
+.todo-form-input{
+  width: 150px;
+  padding: 5px 10px;
+  border-color:  rgba(210, 82, 127, 1);
+  font-size: 1.5rem;
+}
+.todo-form-input:focus{
+  outline: none;
+  background-color: white;
+  border-color: rgba(30, 139, 195, 1);
+}
+
+.todo-form-btn{
+  width: 100px;
+  margin: 0 10px; 
+  padding: 6px 10px;
+  background-color:  rgba(210, 82, 127, 1);
+  font-size: 1.5rem;
   color: white;
+  border: 0; 
 }
 
-.App-link {
-  color: #61dafb;
+.todo-form-btn:hover{
+  background-color: rgba(30, 139, 195, 1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-list-container{
+  width: 100%;
+  margin: 50px auto;
+  padding: 20px 0;
+  border: 1px solid red;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.todo-item-container{
+  border: 1px solid blue;
+  padding: 25px;
 }
