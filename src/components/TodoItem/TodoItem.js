@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import Moment from 'react-moment';
 
+import TodoItemTags from './TodoItemTags';
+
 const TodoItem = ({todo, dispatch}) => {
     const [pastDue, setPastDue] = useState(false);
 
@@ -18,11 +20,13 @@ const TodoItem = ({todo, dispatch}) => {
     return(
         <div onClick={() => dispatch({type: 'TOGGLE_COMPLETED', payload: {id: todo.id}})}>
             <h2>{todo.item}</h2>
+
             {todo.tags.length > 0 &&
-                todo.tags.map((tag, idx) => (
-                    <h3 key={idx}>{tag}</h3>
-                ))
+            <div className="todo-tags-container">
+               {todo.tags.map((tag, idx) => <TodoItemTags tag={tag} key={idx}/>)}
+            </div>
             }
+
             {todo.completed &&
                 <h4>Completed: {todo.completed === false ? `not completed`: <Moment format={'MMM Do YYYY'}>{todo.completedDate}</Moment>}</h4>
             }
