@@ -9,16 +9,18 @@ const TodoList = ({list, dispatch}) => {
     }
     
     return(
-        <div>
+        <div className="todo-list-container">
             {list.data.map( todo => (
                 <div key={todo.id}>
-                    <TodoItem todo={todo} dispatch={dispatch}/>
+                    <TodoItem uniqueID={todo.id}todo={todo} dispatch={dispatch}/>
                 </div>
             ))}
             {list.data.length > 0 && 
-                <button onClick={clearCompletedTodos}>
-                    Clear Completed
-                </button>
+                <div className="clear-btn-container">
+                    <button className="clear-btn" onClick={clearCompletedTodos}>
+                        Clear Completed
+                    </button>
+                </div>
             }
             
         </div>

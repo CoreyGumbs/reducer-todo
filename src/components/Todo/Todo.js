@@ -13,9 +13,7 @@ const Todo = () => {
             <div className="todo-form-container">
                 <TodoForm state={state} dispatch={dispatch} />
             </div>
-            <div className="todo-list-container">
-                <TodoList list={state} dispatch={dispatch} />
-            </div>
+            <TodoList list={state} dispatch={dispatch} />
         </div>
     )
 }

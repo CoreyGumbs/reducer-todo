@@ -32,14 +32,33 @@
 
 .todo-container{
   position: relative;
-  left: 300px;
-  width: 65%;
+  left: 350px;
+  width: 60%;
   margin: 50px 0; 
   padding: 0;
-  /* border: 1px solid purple; */
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
   align-items: center;
+
+}
+.clear-btn-container{
+  display: flex;
+}
+.clear-btn{
+  width: 50%;
+  margin:  0 auto;
+  padding: 10px 0;
+  font-size: 1.5rem;
+  background-color: rgba(210, 82, 127, 1);
+  border: 1px solid rgba(210, 82, 127, 1);
+  color: white;
+  transition: all .1s ease-in-out;
+}
+
+.clear-btn:hover{
+  background-color: white;
+  color: rgba(210, 82, 127, 1);
 }
 
 .todo-form-container{
@@ -52,7 +71,6 @@
 
 .todo-form-container form{
   width: 100%;
-  /* background-color: rgba(210, 82, 127, 1); */
   padding: 0px;
   display: flex;
   align-items: center;
@@ -77,10 +95,12 @@
   padding: 5px 10px;
   border-color:  rgba(210, 82, 127, 1);
   font-size: 1.5rem;
+  transition: all .2s ease-in-out;
 }
 .todo-form-input:focus{
   outline: none;
   background-color: white;
+  border-bottom-width: 2px;
   border-color: rgba(30, 139, 195, 1);
 }
 
@@ -92,6 +112,7 @@
   font-size: 1.5rem;
   color: white;
   border: 0; 
+  transition: all .2s ease-in-out;
 }
 
 .todo-form-btn:hover{
@@ -99,18 +120,92 @@
 }
 
 .todo-list-container{
-  width: 100%;
+  width: 150%;
   margin: 50px auto;
-  padding: 20px 0;
-  border: 1px solid red;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
+  padding: 0;
 }
 
 .todo-item-container{
-  border: 1px solid blue;
-  padding: 25px;
+  width: 80%;
+  margin: 20px auto 50px auto;
+  padding: 20px;
+  border:1px solid #ccc;
+  box-shadow: 0px 2px 5px #333;
+}
+
+.todo-item-heading-youdo{
+  color:  rgba(210, 82, 127, 1);
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 3rem; 
+}
+
+.todo-item-heading{
+  width: 100%;
+  margin: 0 0 10px 0;
+  padding: 0 0 10px 0;  
+  font-size: 4rem;
+  color:  rgba(210, 82, 127, 1);
+  border-bottom: 1px solid rgba(210, 82, 127, 1);
+}
+
+.todo-tags-container{
+  margin: 0;
+  padding: 5px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.todo-item-tags-btn{
+  margin: 0 10px 0 0;
+  padding: 5px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(30, 139, 195, 1);
+  border: 1px solid rgba(30, 139, 195, 1);
+  border-radius: 5px;
+  transition: all .2s ease-in-out;
+}
+
+.todo-item-tags-btn:hover{
+  background-color: white;
+  border: 1px solid rgba(210, 82, 127, 1);
+  color: rgba(210, 82, 127, 1); 
+}
+
+.todo-item-status{
+  margin: 10px 0;
+  padding: 20px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.todo-item-status-heading, .todo-item-date, 
+.todo-item-overdue, .todo-item-ontime {
+  font-size: 1.5rem;
+}
+.todo-item-status-heading{
+  margin: 0 10px 0 0;
+  color: #999;
+}
+
+.todo-item-date{
+  margin: 0 5px;
+}
+
+.todo-item-overdue{
+  margin: 0;
+  padding: 0;
+  color: red;
+  font-weight: bold;
+}
+.todo-item-ontime{
+  margin: 0;
+  padding: 0;
+  color: rgba(4, 147, 114, 1);
+  font-weight: bold;
 }
