@@ -1,5 +1,6 @@
 import React from 'react';
 
+import TodoItem from '../TodoItem/TodoItem';
 
 const TodoList = ({list, dispatch}) => {
     console.log(list);
@@ -7,8 +8,7 @@ const TodoList = ({list, dispatch}) => {
         <div>
             {list.data.map( todo => (
                 <div key={todo.id}>
-                    {todo.id}
-                    {todo.item}
+                    <TodoItem todo={todo} dispatch={dispatch}/>
                 </div>
             ))}
         </div>
