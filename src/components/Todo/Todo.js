@@ -8,7 +8,6 @@ import TodoForm from '../TodoForm/TodoForm';
 const Todo = () => {
     const [state, dispatch] = useReducer(todoReducer, initialState);
     
-    console.log(state);
     return(
         <div className="todo-container">
             <div className="todo-form-container">

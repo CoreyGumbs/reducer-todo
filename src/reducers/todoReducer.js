@@ -1,9 +1,11 @@
+let id = 1;
+
 export const initialState ={ 
     data: [{
             item: 'first todo',
             tags: [],
             completed: false,
-             id: Date.now()
+             id: id++
     }]
 };
 
@@ -18,7 +20,7 @@ export const todoReducer = (currentState, action) => {
                     item: action.payload.item,
                     tags: action.payload.tags,
                     completed: false,
-                    id: Date.now(),
+                    id: id++,
                     completedDate: ''
                     }
                 ]
