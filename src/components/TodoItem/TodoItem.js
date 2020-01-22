@@ -19,7 +19,7 @@ const TodoItem = ({todo, dispatch}) => {
 
     return(
         <div className="todo-item-container"onClick={() => dispatch({type: 'TOGGLE_COMPLETED', payload: {id: todo.id}})}>
-            <h2>{todo.item}</h2>
+            <h2 className="todo-item-heading">{todo.item}</h2>
 
             {todo.tags.length > 0 &&
             <div className="todo-tags-container">
