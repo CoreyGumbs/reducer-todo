@@ -10,7 +10,7 @@ const TodoItem = ({todo, dispatch}) => {
                     <h3 key={idx}>{tag}</h3>
                 ))}
 
-            <h4>Completed: <Moment format={'YYYY/MM/DD'}>todo.completedDate</Moment></h4>
+            <h4>Completed: {todo.completed === false ? `not completed`: <Moment format={'MMM Do YYYY'}>{todo.completedDate}</Moment>}</h4>
            
         </div>
     );
