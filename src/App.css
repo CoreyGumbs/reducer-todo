@@ -1,38 +1,252 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Roboto&display=swap');
+
+*{
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.logo-header-container{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 15%; 
+  margin: 50px; 
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo-heading{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 5rem;
+  text-shadow: 0px 3px 4px rgba(30, 139, 195, 1);
+  color: rgba(210, 82, 127, 1); /*caberet*/
+  
+
+  -ms-transform: rotate(-20deg); /* IE 9 */
+  -webkit-transform: rotate(-20deg); /* Safari prior 9.0 */
+  transform: rotate(-20deg);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo-container{
+  position: relative;
+  left: 350px;
+  width: 65%;
+  margin: 50px 0; 
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-flow: row wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+
+}
+.clear-btn-container{
+  display: flex;
+}
+.clear-btn{
+  width: 50%;
+  margin:  0 auto;
+  padding: 10px 0;
+  font-size: 1.5rem;
+  background-color: rgba(210, 82, 127, 1);
+  border: 1px solid rgba(210, 82, 127, 1);
+  color: white;
+  transition: all .3s ease-in-out;
+}
+
+.clear-btn:hover{
+  background-color: rgba(30, 139, 195, 1);
+  border: 1px solid rgba(30, 139, 195, 1);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-form-container{
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-form-container form{
+  width: 100%;
+  padding: 0px;
+  display: flex;
+  align-items: center;
 }
+
+.todo-form-label{
+  margin: 0 10px;
+  padding: 0;
+  font-size: 1.5rem;
+  color: rgba(46, 49, 49, 1);
+}
+
+.todo-form-input, .todo-form-input:focus{
+  border-width: 1px;
+  border-top: 0;
+  border-left: 0;
+  border-right:0;
+  border-style: solid;
+}
+
+.todo-form-input{
+  width: 150px;
+  padding: 5px 10px;
+  border-color:  rgba(210, 82, 127, 1);
+  font-size: 1.5rem;
+  transition: all .4s linear;
+}
+.todo-form-input:focus{
+  outline: none;
+  background-color: white;
+  border-bottom-width: 2px;
+  border-color: rgba(30, 139, 195, 1);
+}
+
+.todo-form-btn{
+  width: 100px;
+  margin: 0 10px; 
+  padding: 6px 10px;
+  background-color:  rgba(210, 82, 127, 1);
+  font-size: 1.5rem;
+  color: white;
+  border: 0; 
+  transition: all .2s ease-in-out;
+}
+
+.todo-form-btn:hover{
+  background-color: rgba(30, 139, 195, 1);
+}
+
+.todo-list-container{
+  width: 150%;
+  margin: 50px auto;
+  padding: 0;
+}
+
+.todo-item-container,.todo-item-container-completed{
+  width: 80%;
+  margin: 20px auto 50px auto;
+  padding: 20px;
+  border:1px solid #ccc;
+  box-shadow: 0px 5px 5px #ccc;
+  transition: all .2s ease-in-out;
+}
+
+.todo-item-container-completed{
+  background-color: #e5e5e5;
+  box-shadow: 0px 0px 0px;
+  transition: all .2s ease-in-out;
+}
+
+.todo-item-heading-youdo, .todo-item-heading-youdo-completed{
+  color:  rgba(210, 82, 127, 1);
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 3rem; 
+  
+}
+
+.todo-item-heading-youdo-completed{
+ color: #999;
+ transition: all .2s ease-in-out;
+}
+
+.todo-item-heading, .todo-item-heading-completed{
+  width: 100%;
+  margin: 0 0 10px 0;
+  padding: 0 0 10px 0;  
+  font-size: 4rem;
+  color:  rgba(210, 82, 127, 1);
+  border-bottom: 1px solid rgba(210, 82, 127, 1);
+  transition: all .2s ease-in-out;
+}
+
+.todo-item-heading-completed{
+  color: #999;
+  border-bottom: 1px solid #999;
+  text-shadow: 0px 2px 1px #666;
+}
+
+.todo-item-heading-completed, .todo-item-heading-youdo-completed{
+  text-shadow: 0px 3px 2px #666;
+}
+
+.todo-tags-container{
+  margin: 0;
+  padding: 5px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.todo-item-tags-btn{
+  margin: 0 10px 0 0;
+  padding: 5px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: rgba(210, 82, 127, 1);
+  background-color: white;
+  border: 1px solid rgba(210, 82, 127, 1);
+  border-radius: 5px;
+  transition: all .2s ease-in-out;
+}
+
+.todo-item-tags-btn:hover{
+  background-color: rgba(210, 82, 127, 1);
+  border: 1px solid rgba(210, 82, 127, 1);
+  color: white;
+}
+
+.todo-tags-btn-completed{
+  margin: 0 10px 0 0;
+  padding: 5px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #ddd;
+  color: #999;
+  border: 1px solid#ccc;
+  border-radius: 5px;
+  transition: all .2s ease-in-out;
+}
+
+.todo-item-status{
+  margin: 10px 0;
+  padding: 20px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.todo-item-status-heading, .todo-item-date, 
+.todo-item-overdue, .todo-item-ontime{
+  font-size: 1.5rem;
+}
+.todo-item-status-heading{
+  margin: 0 10px 0 0;
+  color: #999;
+}
+
+.todo-item-date{
+  margin: 0 5px;
+}
+
+.todo-item-overdue{
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  color: rgba(242, 38, 19, 1);
+  font-weight: bold;
+}
+.todo-item-ontime{
+  margin: 0;
+  padding: 0;
+  color: rgba(4, 147, 114, 1);
+  font-weight: bold;
+}
+
+
